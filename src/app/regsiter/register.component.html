@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <div id="logbox">
+        <form id="signup" (ngSubmit)="onRegister(formR)" #formR="ngForm" autocomplete="off">
+          <h1>Register</h1>
+          <input name="name" type="text" placeholder="What's your username?" class="input pass" ngModel required/>
+          <input name="password" type="password" placeholder="Choose a password" class="input pass" ngModel required/>
+          <input name="password2" type="password" placeholder="Confirm password" class="input pass" ngModel required/>
+          <input name="email" type="email" placeholder="Email address" class="input pass" ngModel required/>
+          <input type="submit" [disabled]="!formR.valid" value="Sign me up!" class="inputButton btn-primary"/>
+          <div class="text-center">
+            already have an account? <a routerLink="/login" id="login_id">login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

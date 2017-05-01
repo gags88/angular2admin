@@ -1,18 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { RegsiterComponent } from './regsiter/regsiter.component';
+import { RegisterComponent } from './regsiter/regsiter.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import {routing} from './app.routing';
+import { routing } from './app.routing';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { LoginComponent } from './login/login.component';
+import {AuthGuardService} from "./services/auth-guard.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegsiterComponent,
-    NavbarComponent
+    RegisterComponent,
+    NavbarComponent,
+    ErrorPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,7 @@ import {routing} from './app.routing';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [Title, AuthGuardService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
