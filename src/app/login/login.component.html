@@ -2,11 +2,17 @@
   <div class="row">
     <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
       <div id="logbox">
-        <form id="signup" (ngSubmit)="onLogin(formL)" #formL="ngForm" autocomplete="off">
+        <form id="signin" (ngSubmit)="onLogin(formL)" #formL="ngForm" autocomplete="off">
           <h1>Login</h1>
-          <input name="email" type="email" placeholder="Email address" class="input pass" ngModel required/>
-          <input name="password" type="password" placeholder="Password" class="input pass" ngModel required/>
-          <input type="submit" value="Sign In!" class="inputButton btn-primary" [disabled]="!formL.valid"/>
+          <div class="form-group" [class.has-error]="!email.valid && email.touched">
+            <input name="email" type="email" placeholder="Email address" class="input form-control" ngModel email required #email="ngModel"/>
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please provide a valid email</span>
+          </div>
+          <div class="form-group" [class.has-error]="!pass.valid && pass.touched">
+            <input name="password" type="password" placeholder="Password" class="input pass form-control" ngModel required #pass="ngModel"/>
+            <span class="help-block" *ngIf="!pass.valid && pass.touched">Password can not be blank</span>
+          </div>
+            <input type="submit" value="Sign In!" class="inputButton btn-primary" [disabled]="!formL.valid"/>
           <div class="text-center">
             new user? <a routerLink="/register" id="login_id">register</a>
           </div>

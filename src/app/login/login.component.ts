@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {NgForm} from "@angular/forms";
-import {AuthGuardService} from "../services/auth-guard.service";
+import {NgForm} from '@angular/forms';
+import {AuthGuardService} from '../services/auth-guard.service';
 
 @Component({
   selector: 'app-login',
