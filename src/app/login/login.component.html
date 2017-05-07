@@ -14,7 +14,7 @@
           </div>
             <input type="submit" value="Sign In!" class="inputButton btn-primary" [disabled]="!formL.valid"/>
           <div class="text-center">
-            new user? <a routerLink="/register" id="login_id">register</a>
+            new user? <a routerLink="/register" id="login_id" (mousedown)="false">register</a>
           </div>
         </form>
       </div>

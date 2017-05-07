@@ -22,7 +22,7 @@
           </div>
             <input type="submit" [disabled]="!formR.valid" value="Sign up!" class="inputButton btn-primary"/>
           <div class="text-center">
-            already have an account? <a routerLink="/login" id="login_id">login</a>
+            already have an account? <a routerLink="/login" id="login_id" (mousedown)="false">login</a>
           </div>
         </form>
       </div>
